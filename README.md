@@ -9,35 +9,31 @@ Creating a new drug for COVID is very expensive and take a lot a lot of time to 
 Install chembl client and import required libraries for analysis like pandas, numpy, matplotlib, seaborn
 
 ## Cleaning the data 
-Now I will explore the data and clean it by:
+I explored the data and cleaned it by:
 - extracting the rows that has standard type IC50
 - changing columns type to the appropriate type
-- some molecules have multiple rows with different values so I aggregated them and calculated their mean
+- some molecules had multiple rows with different values so I aggregated them and calculated their mean
 - categorized the standard values into inactive, intermediate, and active
 
 ## Feature engineering
 
-Here I create new feature form the data I have by:
-- Make a mole columns that has the molecular representation of the molecules
-- Calculate lipinski descriptors from the smiles (representation of the molecular structure)
-- made a new data frame that has the name and structure of the molecules and the calculated descriptors as well as the activity class
+I created new feature form the data I have by:
+- Making a mole columns that has the molecular representation of the molecules
+- Calculating lipinski descriptors from the smiles (representation of the molecular structure)
+- I made a new data frame that has the name and structure of the molecules and the calculated descriptors as well as the activity class
 - Added the log of the mean standard values because those values were skewed
 
 ## Statistical analysis
 **Is the active drugs population differ from the inactive in regard to the descriptors in the dataframe?**
 
 
----
-
-
-
 **After analysis conclusion**:  Using mann whitney u test, it appears that the population does't differ in the featured except for the PIC50 and that clearly because the bio-activity classes were made using cut off values from the IC50 values.
 
-**So I will need to calculate more descriptors**
+**So I needed to calculate more descriptors**
 
 ## Calculating More descriptors
 
-I will use padelpy library to calculate some more descriptors from the smile of every molecule
+I used padelpy library to calculate some more descriptors from the smile of every molecule
  
  ## Machine learning model creation
 
